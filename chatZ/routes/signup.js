@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* Add dato to DB */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express Sing UP' });
+  res.render('signup');
 });
 
 module.exports = router;

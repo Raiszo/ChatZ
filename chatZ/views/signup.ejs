@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>%= title%</title>
+	<link rel="stylesheet"  href="/stylesheets/style.css" />
+</head>
+<body>
+	<div class="">
+
+		<h1>Sign Up!</h1>
+		<form action="/addto" method="post">
+			user<br><input type="text" name="fname" required><br>
+			password<br><input type="password" name="pass" id="password" required><br>
+			Repeat password<br><input type="password" name="pass2" id="confirm_password" required><br>
+			<input type="submit" value="Submit">
+		</form> 
+
+		<a href="/">Log in</a>
+
+	</div>
+	<script src="confirm_password.js">
+	</script>
+</body>
+</html>
