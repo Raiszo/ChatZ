@@ -14,9 +14,10 @@ var knex = require('knex')({
 router.post('/', function(req, res) {
 	knex.select('id_remiente','mensaje').from('mensajeria').then(function(result){
 		res.render('bandeja', {
+			u: req.param('u'),
+			remitente: req.param('u'),
 			mensajes: result
 		});
-		console.log(result);
 	});
 });
 

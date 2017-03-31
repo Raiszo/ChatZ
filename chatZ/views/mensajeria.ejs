@@ -13,7 +13,8 @@
 
 		<h1>Mensajeria</h1>
 		<form action="/envio" method="post">
-			<input type='text' name='remitente' value="<%= remiente %>">
+			<input type='hidden' name='u' value="<%= u %>">
+			<input type='text' name='remitente' value="<%= u %>">
 			<br>
 			<select name="user">
 			<% for( var i = 0 ; i < usuarios.length ; i ++ ){ %>

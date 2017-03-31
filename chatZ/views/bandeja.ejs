@@ -10,10 +10,12 @@
 </head>
 <body>
 	<div class="">
-
+	<form action="/mensaje" method="post">
+		<input type="hidden" name="u" value="<%= u %>">
+    <input type="submit" value="Redactar Mensaje">
+  </form>
 	<h1>Bandeja</h1>
-	<a href='/mensaje'>Enviar Mensaje</a>
-	<% for (var i = 0 ; i < mensajes ; i ++){ %>
+	<% for (var i = 0 ; i < mensajes.length ; i ++){ %>
 
 		<div>
 			<p>

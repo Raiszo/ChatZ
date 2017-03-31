@@ -14,7 +14,9 @@ var knex = require('knex')({
 router.post('/', function(req, res) {
 	knex.select('id_p','name').from('persona').then(function(result){
 		res.render('mensajeria', {
-			remitente: req.param('user'),
+			u : req.param('u'),
+			user: req.param('user'),
+			remitente: req.param('u'),
 			usuarios: result
 		});
 		console.log(result);
