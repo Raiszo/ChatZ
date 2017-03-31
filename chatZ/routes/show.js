@@ -1,17 +1,21 @@
 var express = require('express');
 var router = express.Router();
-var pgp = require('pg-promise')();
-var db = pgp("postgres://hadas:hadas2017@127.0.0.1:5432/hadas");
+var knex = require('knex')({
+	client : 'pg',
+	connection : {
+		host : 'localhost',
+		port : '5432',
+		user : 'hadas',
+		password : 'hadas2017',
+		database : 'hadas'
+	}
+});
 
 router.get('/', function(req, res) {
-	db.any("SELECT * FROM persona")
-		.then( function (data) {
-			res.send(data);
-			res.send(data.value);
-		})
-		.catch(function (error) {
-			console.log("ERROR: ", error);
-		});
+	knex.select().from('persona').then(function(result){
+		console.log(result);
+	});
+	res.send('das');
 });
 
 module.exports = router;
