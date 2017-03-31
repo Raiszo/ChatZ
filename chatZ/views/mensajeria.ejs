@@ -12,10 +12,14 @@
 	<div class="">
 
 		<h1>Login</h1>
-		<form action="" method="get">
-			user<br><input type="text" name="fname" required><br>
-			password<br><input type="text" name="pass" required><br>
-			Repeat password<br><input type="text" name="pass2" required><br>
+		<form action="/mensaje" method="post">
+			<% var usuarios = [""]; %>
+			<% for( var i = 0 ; i < usuarios.length ; i ++ ){ %>
+				<option value="<%= usuarios[i].id_p %>"> <% usuarios[i].name %> </option>
+			<% } %>
+			<br>
+			<textarea name="comentario"></textarea>
+			<br>	
 			<input type="submit" value="Submit">
 		</form> 
 
