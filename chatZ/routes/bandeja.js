@@ -11,11 +11,13 @@ var knex = require('knex')({
 	}
 });
 
-router.get('/', function(req, res) {
-	var re = knex.select().from('persona').then(function(result){
-		return result;
-	})
-	console.log(re);
+router.post('/', function(req, res) {
+	knex.select('id_remiente','mensaje').from('mensajeria').then(function(result){
+		res.render('bandeja', {
+			mensajes: result
+		});
+		console.log(result);
+	});
 });
 
 module.exports = router;

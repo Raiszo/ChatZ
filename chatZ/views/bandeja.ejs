@@ -11,21 +11,19 @@
 <body>
 	<div class="">
 
-		<h1>Mensajeria</h1>
-		<form action="/envio" method="post">
-			<input type='text' name='remitente' value="<%= remiente %>">
-			<br>
-			<select name="user">
-			<% for( var i = 0 ; i < usuarios.length ; i ++ ){ %>
-				<option value="<%= usuarios[i].id_p %>"> <%= usuarios[i].name %> </option>
-			<% } %>
-			</select>
-			<br>
-			<textarea name="comentario"></textarea>
-			<br>	
-			<input type="submit" value="Submit">
-		</form> 
+	<h1>Bandeja</h1>
+	<a href='/mensaje'>Enviar Mensaje</a>
+	<% for (var i = 0 ; i < mensajes ; i ++){ %>
 
+		<div>
+			<p>
+				De: <%= mensajes[i].id_remiente %><br>
+				<%= mensajes[i].mensaje %>
+			<p>
+		</div>
+
+
+	<% } %>
 	</div>
 </body>
 </html>

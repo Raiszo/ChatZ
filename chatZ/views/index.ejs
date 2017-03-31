@@ -3,16 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>%= title %</title>
+	<title><%= title %></title>
 	<link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
 	<div class="">
 
 		<h1>Login</h1>
-		<form action="/login" method="post">
+		<form action="/bandeja" method="post">
 			user<br><input type="text" name="user" required><br>
-			password<br><input type="text" name="pass" required><br>
+			password<br><input type="password" name="pass" required><br>
 			<input type="submit" value="Submit">
 		</form> 
 		<form action="/signup" method="get">

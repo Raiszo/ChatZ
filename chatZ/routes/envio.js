@@ -11,11 +11,16 @@ var knex = require('knex')({
 	}
 });
 
+
+
 router.post('/', function(req, res) {
-	knex('persona').insert([ {'name': req.param('fname'),'pass': req.param('pass')} ]).then(function(result){
+	console.log(req.param('remitente'));
+	var sub = knex('persona').where( {name: req.param('remitente')} ).select('id_p');
+	console.log(sub);
+	knex('mensajeria').insert([ {'id_remiente': sub,'id_receptor':req.param('user'),'mensaje': req.param('comentario')} ]).then (function(result) {
+		res.render('bandeja');
 		console.log(result);
 	});
-	res.send('Done');
 });
 
 module.exports = router;
